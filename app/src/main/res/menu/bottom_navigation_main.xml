@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_Length"
+        android:enabled="true"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="Length"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Weight"
+        android:enabled="true"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="Weight"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Temperature"
+        android:enabled="true"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="Temperature"
+        app:showAsAction="never" />
+</menu>
