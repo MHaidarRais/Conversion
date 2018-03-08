@@ -3,6 +3,8 @@ package com.example.macosx.conversion;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -309,14 +312,36 @@ public class MainActivity extends AppCompatActivity {
                             case R.id.action_Length:
                                 Intent intent = new Intent(MainActivity.this,MainActivity.class);
                                 startActivity(intent);
+                                break;
 
                             case R.id.action_Weight:
 
-                                Intent intent2 = new Intent(MainActivity.this, WeightActivity.class);
-                                startActivity(intent2);
+                                FrameLayout idLayout2 = (FrameLayout) findViewById(R.id.frame_layout);
+                                idLayout2.removeAllViews();
+                                WeightActivity fragment2 = new WeightActivity();
+                                FragmentManager fragmentManager2 = getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+                                fragmentTransaction2.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                                fragmentTransaction2.replace(R.id.frame_layout, fragment2);
+                                fragmentTransaction2.addToBackStack(null);
+                                fragmentTransaction2.commit();
+
+//                                Intent intent2 = new Intent(MainActivity.this, WeightActivity.class);
+//                                startActivity(intent2);
+                                break;
                             case R.id.action_Temperature:
-                                Intent intent3 = new Intent(MainActivity.this, TemperatureActivity.class);
-                                startActivity(intent3);
+                                FrameLayout idLayout3 = (FrameLayout) findViewById(R.id.frame_layout);
+                                idLayout3.removeAllViews();
+                                TemperatureActivity fragment3 = new TemperatureActivity();
+                                FragmentManager fragmentManager3 = getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction3 = fragmentManager3.beginTransaction();
+                                fragmentTransaction3.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                                fragmentTransaction3.replace(R.id.frame_layout, fragment3);
+                                fragmentTransaction3.addToBackStack(null);
+                                fragmentTransaction3.commit();
+//                                Intent intent3 = new Intent(MainActivity.this, TemperatureActivity.class);
+//                                startActivity(intent3);
+                                break;
 
 
 
